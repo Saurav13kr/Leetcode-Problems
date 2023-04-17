@@ -1,4 +1,5 @@
 1431. Kids With the Greatest Number of Candies<br>
+<br>
 There are n kids with candies. You are given an integer array candies, where each candies[i] represents the number of candies the ith kid has, and an integer extraCandies, denoting the number of extra candies that you have.<br>
 <br>
 Return a boolean array result of length n, where result[i] is true if, after giving the ith kid all the extraCandies, they will have the greatest number of candies among all the kids, or false otherwise.<br>
@@ -23,6 +24,7 @@ Explanation: If you give all extraCandies to:<br>
 Example 2:<br>
 <br>
 Input: candies = [4,2,1,1,2], extraCandies = 1<br>
+<br>
 Output: [true,false,false,false,false] <br>
 <br>
 Explanation: There is only 1 extra candy.<br>
@@ -31,4 +33,5 @@ Kid 1 will always have the greatest number of candies, even if a different kid i
 Example 3:<br>
 <br>
 Input: candies = [12,1,12], extraCandies = 10<br>
+<br>
 Output: [true,false,true]<br>
