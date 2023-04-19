@@ -13,7 +13,7 @@ Zigzag length is defined as the number of nodes visited - 1. (A single node has 
 Return the longest ZigZag path contained in that tree.<br> 
 Example 1:<br>
 <br>
-<img src="![image](https://user-images.githubusercontent.com/124197263/233087128-475666b7-def0-48e0-bc96-de6b643339b0.png)">
+<img src="(https://user-images.githubusercontent.com/124197263/233087128-475666b7-def0-48e0-bc96-de6b643339b0.png)">
 
 <br>
 Input: root = [1,null,1,1,1,null,null,1,1,null,1,null,null,null,1,null,1]<br>
@@ -21,7 +21,7 @@ Output: 3<br>
 Explanation: Longest ZigZag path in blue nodes (right -> left -> right).<br>
 <br>
 Example 2:<br>
-<img src="![image](https://user-images.githubusercontent.com/124197263/233087288-8269807c-7b29-4059-a645-ce88923d429a.png)">
+<img src="(https://user-images.githubusercontent.com/124197263/233087288-8269807c-7b29-4059-a645-ce88923d429a.png)">
 <br>
 
 Input: root = [1,1,1,null,1,null,null,1,1,null,1]<br>
