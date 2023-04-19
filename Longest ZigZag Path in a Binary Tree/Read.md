@@ -15,11 +15,15 @@ Return the longest ZigZag path contained in that tree.
 
 Example 1:
 
+<img src="![image](https://user-images.githubusercontent.com/124197263/233087128-475666b7-def0-48e0-bc96-de6b643339b0.png)">
+
 
 Input: root = [1,null,1,1,1,null,null,1,1,null,1,null,null,null,1,null,1]
 Output: 3
 Explanation: Longest ZigZag path in blue nodes (right -> left -> right).
+
 Example 2:
+<img src="![image](https://user-images.githubusercontent.com/124197263/233087288-8269807c-7b29-4059-a645-ce88923d429a.png)">
 
 
 Input: root = [1,1,1,null,1,null,null,1,1,null,1]
