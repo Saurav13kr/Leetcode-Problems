@@ -10,9 +10,7 @@ Change the direction from right to left or from left to right.<br>
 Repeat the second and third steps until you can't move in the tree.<br>
 Zigzag length is defined as the number of nodes visited - 1. (A single node has a length of 0).<br>
 <br>
-Return the longest ZigZag path contained in that tree.<br>
-<br>
- 
+Return the longest ZigZag path contained in that tree.<br> 
 Example 1:<br>
 <br>
 <img src="![image](https://user-images.githubusercontent.com/124197263/233087128-475666b7-def0-48e0-bc96-de6b643339b0.png)">
@@ -29,11 +27,11 @@ Example 2:<br>
 Input: root = [1,1,1,null,1,null,null,1,1,null,1]<br>
 Output: 4<br>
 Explanation: Longest ZigZag path in blue nodes (left -> right -> left -> right).<br>
+<br>
 Example 3:<br>
 <br>
 Input: root = [1]<br>
 Output: 0<br>
- 
 
 Constraints:
 
