@@ -25,9 +25,9 @@ There are 7 possible schemes: (0), (1), (2), (0,1), (0,2), (1,2), and (0,1,2).
 
 Constraints:
 
-1 <= n <= 100
-0 <= minProfit <= 100
-1 <= group.length <= 100
-1 <= group[i] <= 100
-profit.length == group.length
-0 <= profit[i] <= 100
+1 <= n <= 100<br>
+0 <= minProfit <= 100<br>
+1 <= group.length <= 100<br>
+1 <= group[i] <= 100<br>
+profit.length == group.length<br>
+0 <= profit[i] <= 100<br>
