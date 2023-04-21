@@ -9,18 +9,18 @@ Return the number of schemes that can be chosen. Since the answer may be very la
 
  
 
-Example 1:
+Example 1:<br>
 
-Input: n = 5, minProfit = 3, group = [2,2], profit = [2,3]
-Output: 2
-Explanation: To make a profit of at least 3, the group could either commit crimes 0 and 1, or just crime 1.
-In total, there are 2 schemes.
-Example 2:
+Input: n = 5, minProfit = 3, group = [2,2], profit = [2,3]<br>
+Output: 2<br>
+Explanation: To make a profit of at least 3, the group could either commit crimes 0 and 1, or just crime 1.<br>
+In total, there are 2 schemes.<br>
+Example 2:<br>
 
-Input: n = 10, minProfit = 5, group = [2,3,5], profit = [6,7,8]
-Output: 7
-Explanation: To make a profit of at least 5, the group could commit any crimes, as long as they commit one.
-There are 7 possible schemes: (0), (1), (2), (0,1), (0,2), (1,2), and (0,1,2).
+Input: n = 10, minProfit = 5, group = [2,3,5], profit = [6,7,8]<br>
+Output: 7<br>
+Explanation: To make a profit of at least 5, the group could commit any crimes, as long as they commit one.<br>
+There are 7 possible schemes: (0), (1), (2), (0,1), (0,2), (1,2), and (0,1,2).<br>
  
 
 Constraints:
