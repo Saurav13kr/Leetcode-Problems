@@ -25,6 +25,7 @@ we combine 1 and 1 to get 0 so the array converts to [1] then that's the value o
 Example 2:<br>
 <br>
 Input: stones = [1]<br>
+<br>
 Output: 1<br>
  
 <br>
