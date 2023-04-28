@@ -18,7 +18,6 @@
 <pre><strong>Input:</strong> strs = ["omv","ovm"]
 <strong>Output:</strong> 1
 </pre>
-
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
