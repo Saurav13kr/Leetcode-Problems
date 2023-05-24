@@ -3,11 +3,12 @@ class Solution {
     long long maxScore(vector<int>& nums1, vector<int>& nums2, int k) {
         
        vector<pair<int, int>> p ;
+        
         for(int i = 0 ; i<nums1.size() ; i++) {
             p.push_back({nums2[i] , nums1[i]});
         }
         
-        sort(p.rbegin() , p.rend());
+        sort(p.rbegin() , p.rend());  
         long long ans  = 0;
         long long sum  = 0;
         priority_queue<int> pq;
@@ -23,8 +24,7 @@ class Solution {
             sum += pq.top();
             pq.pop();
         }
-        return ans;
         
-        
+        return ans;  
     }
 };
