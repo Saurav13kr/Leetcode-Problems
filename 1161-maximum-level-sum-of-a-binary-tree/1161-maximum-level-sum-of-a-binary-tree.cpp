@@ -1,38 +1,36 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
 class Solution {
 public:
-    int maxLevelSum(TreeNode* root) {
-        if(root==NULL)  return 0;
-        int maxi=INT_MIN;
-        int lev=1,res=0;
-        queue<TreeNode*>q;
-        q.push(root);
+    int maxLevelSum(TreeNode *root) {
+        TreeNode *level[2000], *nextLevel[2000], *currNode;
+        int currPos = 1, nextPos, maxTot = INT_MIN, tot, res, levelCounter = 1;
+        level[0] = root;
+        // BFS routine
         
-        while(q.size()){
-            int sum=0,n=q.size();
-            for(int i=0;i<n;i++){
-                auto t=q.front();
-                q.pop();
-                if(t->left) q.push(t->left);
-                if(t->right)   q.push(t->right);
-                sum+=t->val;
+        while (currPos) 
+        {
+            tot = 0;
+            nextPos = 0;
+
+            for (int i = 0; i < currPos; i++) 
+            {
+
+                currNode = level[i];
+                tot += currNode->val;
+                if (currNode->left) nextLevel[nextPos++] = currNode->left;
+                if (currNode->right) nextLevel[nextPos++] = currNode->right;
             }
-            if(sum>maxi){
-                maxi=sum;
-                res=lev;
+
+            if (tot > maxTot) {
+                res = levelCounter;
+                maxTot = tot;
             }
-            lev++;
+            
+            swap(level, nextLevel);
+            swap(currPos, nextPos);
+            nextPos = 0;
+            levelCounter++;
         }
+        
         return res;
     }
 };
