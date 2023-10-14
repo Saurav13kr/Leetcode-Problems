@@ -7,6 +7,7 @@ public:
             if(rem==0) return 0;
             return 1e9;
         }
+        
         if(dp[i][rem]!=-1)
             return dp[i][rem];
         int ans = 1e9;
