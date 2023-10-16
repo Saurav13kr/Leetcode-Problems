@@ -11,8 +11,7 @@ long long  ncr(int n,int r){
 }
     vector<int> getRow(int rowIndex) {
         vector<int>result;
-        for(int c=0;c<=rowIndex;c++)
-        {
+        for(int c=0;c<=rowIndex;c++) {
             result.push_back(ncr(rowIndex,c));
         }
 
