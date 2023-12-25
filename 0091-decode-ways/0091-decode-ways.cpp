@@ -1,20 +1,28 @@
 class Solution {
 public:
-    int memo[100] = {};
-    int numDecodings(const string& s) {
-        return dp(s, 0);
-    }
+    int dp[101] ;
+    int cal(int i , int n , string &s ){
+        if((i==n-1 && s[i]!='0' )|| i==n )
+            return 1  ; 
     
-    int dp(const string& s, int i) {
-        if (i == s.size()) return 1;
-        if (memo[i] != 0) return memo[i];
-        int ans = 0;
+        if(dp[i]!=-1)
+            return dp[i] ;
         
-        if (s[i] != '0') 
-            ans += dp(s, i+1);
+        int a= 0, b= 0; 
+        if(s[i]>'0')
+        a = cal(i+1, n , s ) ; 
+        if(s[i]=='1' || (s[i]=='2' && s[i+1]<'7'))
+        b = cal(i+2, n ,s ) ;
         
-        if (i+1 < s.size() && (s[i] == '1' || s[i] == '2' && s[i+1] <= '6')) 
-            ans += dp(s, i+2);
-        return memo[i] = ans;
+        return dp[i] = a+b;
+        
+    }
+    int numDecodings(string s) {
+        if(s=="0")
+            return 0 ; 
+        if(s[0]=='0')
+            return 0 ; 
+        memset(dp, -1, sizeof(dp)); 
+        return cal(0, s.length() ,s ) ;
     }
 };
