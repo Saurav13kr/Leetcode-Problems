@@ -1,45 +1,62 @@
 class Solution {
 public:
-    int maximalRectangle(vector<vector<char>>& matrix) {
-        if (matrix.empty() || matrix[0].empty()) {
-            return 0;
+    int findLargestAreaInHistogram(vector<int>& heights) {
+        int n = heights.size();
+        stack<int> st;
+        int leftsmall[n], rightsmall[n];
+        for (int i = 0; i < n; i++) {
+            while (!st.empty() && heights[st.top()] >= heights[i]) {
+                st.pop();
+            }
+            if (st.empty())
+                leftsmall[i] = 0;
+            else
+                leftsmall[i] = st.top() + 1;
+            st.push(i);
         }
-        int numRows = matrix.size();
-        int numCols = matrix[0].size();
-        int maxArea = 0;
-        vector<int> heights(numCols, 0);
-        for (int i = 0; i < numRows; i++) {
-            for (int j = 0; j < numCols; j++) {
+        while (!st.empty())
+            st.pop();
+
+        for (int i = n - 1; i >= 0; i--) {
+            while (!st.empty() && heights[st.top()] >= heights[i])
+                st.pop();
+
+            if (st.empty())
+                rightsmall[i] = n - 1;
+            else
+                rightsmall[i] = st.top() - 1;
+
+            st.push(i);
+        }
+        int maxA = 0;
+        for (int i = 0; i < n; i++) {
+            maxA = max(maxA, heights[i] * (rightsmall[i] - leftsmall[i] + 1));
+        }
+        return maxA;
+    }
+
+    int maximalRectangle(vector<vector<char>>& matrix) {
+        int n = matrix.size();
+        int m = matrix[0].size();
+        int area = 0;
+        vector<int> rowHistogram(m, 0);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; ++j) {
                 if (matrix[i][j] == '1') {
-                    heights[j]++;
-                } else {
-                    heights[j] = 0; 
+                    rowHistogram[j]++;
+                } 
+                else {
+                    rowHistogram[j] = 0;
                 }
             }
-            maxArea = max(maxArea, largestRectangleArea(heights));
+            area = max(area, findLargestAreaInHistogram(rowHistogram));
         }
-        return maxArea;
-    }
-    int largestRectangleArea(vector<int>& heights) {
-        stack<int> s;
-        int maxArea = 0;
-        int i = 0;      
-        while (i < heights.size()) {
-            if (s.empty() || heights[i] >= heights[s.top()]) {
-                s.push(i++);
-            } else {
-                int top = s.top();
-                s.pop();
-                int width = s.empty() ? i : i - s.top() - 1;
-                maxArea = max(maxArea, heights[top] * width);
-            }
-        }
-        while (!s.empty()) {
-            int top = s.top();
-            s.pop();
-            int width = s.empty() ? i : i - s.top() - 1;
-            maxArea = max(maxArea, heights[top] * width);
-        }       
-        return maxArea;
+        return area;
     }
 };
+auto init = []() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return 'c';
+}();
