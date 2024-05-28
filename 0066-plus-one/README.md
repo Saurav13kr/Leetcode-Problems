@@ -13,7 +13,7 @@ Thus, the result should be [1,2,4].
 </pre>
 
 <p><strong class="example">Example 2:</strong></p>
-
+<br>
 <pre><strong>Input:</strong> digits = [4,3,2,1]
 <strong>Output:</strong> [4,3,2,2]
 <strong>Explanation:</strong> The array represents the integer 4321.
