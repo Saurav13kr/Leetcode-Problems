@@ -13,8 +13,7 @@ public:
                 }
                 else if(nums[i] + nums[low] + nums[high] > 0){
                     high--;
-                }
-                else{
+                } else{
                     set.insert({nums[i], nums[low], nums[high]});
                     low++;
                     high--;
