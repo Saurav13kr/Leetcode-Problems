@@ -15,13 +15,12 @@ public:
                 return ans;
             }
             
-            else if(nums[mid]>n-mid){
+            else if(nums[mid]>n-mid)
+            {
                 ans=max(ans,n-mid);
                 b=mid-1;
 
-            }
-            
-            else{
+            } else{
                 a=mid+1;
 
             }
