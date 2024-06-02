@@ -13,7 +13,8 @@ public:
                 break;
             }
             
-            for (int row = u; row <= d; row++) {
+            for (int row = u; row <= d; row++) 
+            {
                 order[p++] = matrix[row][r];
             }
             if (--r < l) {
