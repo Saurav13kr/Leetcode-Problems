@@ -8,7 +8,8 @@ public:
             for (int col = l; col <= r; col++) {
                 order[p++] = matrix[u][col];
             }
-            if (++u > d) {
+            if (++u > d) 
+            {
                 break;
             }
             
@@ -19,9 +20,11 @@ public:
                 break;
             }
             
-            for (int col = r; col >= l; col--) {
+            for (int col = r; col >= l; col--) 
+            {
                 order[p++] = matrix[d][col];
             }
+            
             if (--d < u) {
                 break;
             }
