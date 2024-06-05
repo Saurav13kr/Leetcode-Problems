@@ -1,13 +1,15 @@
 class Solution {
 public:
 string ans;
-          void say(int n,string str,int num){
+          void say(int n,string str,int num)
+{
                 if(n==num+1){
                 ans=str;
                 return ;
                 }
               
-                if(n==1){
+                if(n==1)
+                          
                     str="1";
                     say(n+1,str,num);
                     return;
