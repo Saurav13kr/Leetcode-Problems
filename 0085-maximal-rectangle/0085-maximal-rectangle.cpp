@@ -5,7 +5,8 @@ public:
         stack<int> st;
         int leftsmall[n], rightsmall[n];
         for (int i = 0; i < n; i++) {
-            while (!st.empty() && heights[st.top()] >= heights[i]) {
+            while (!st.empty() && heights[st.top()] >= heights[i]) 
+            {
                 st.pop();
             }
             if (st.empty())
@@ -35,7 +36,8 @@ public:
         return maxA;
     }
 
-    int maximalRectangle(vector<vector<char>>& matrix) {
+    int maximalRectangle(vector<vector<char>>& matrix)
+{
         int n = matrix.size();
         int m = matrix[0].size();
         int area = 0;
