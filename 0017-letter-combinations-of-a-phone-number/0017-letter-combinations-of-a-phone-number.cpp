@@ -3,7 +3,9 @@ public:
     vector<string> a;
     string keyPad[10] = {"", "", "abc", "def", "ghi", "jkl", "mno", "qprs", "tuv", "wxyz"};
     
-    void backtrack(int n, string & p, const string& d) {
+    void backtrack(int n, string & p, const string& d) 
+
+{
         if (n == d.size()) {
             a.push_back(p);
             return;
