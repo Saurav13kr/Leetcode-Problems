@@ -1,15 +1,15 @@
 class Solution {
 public:
     int check(string &s, int L, int R) {
-        while(L>=0 and R<s.length() and s[L]==s[R]) {
+        while(L>=0 and R<s.length() and s[L]==s[R]) 
+        {
             L--;
             R++;
         }
         return R-L-1;
     }
     
-    string longestPalindrome(string s) {
-        
+    string longestPalindrome(string s) {       
         int ans = 0, st=0;
         int n = s.length();
         
