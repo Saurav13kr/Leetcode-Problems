@@ -15,7 +15,8 @@ public:
         return t[i][j][k] = ((s1[i]==s3[k] && check(s1, s2, s3, i+1, j, k+1)) || (s2[j]==s3[k] && check(s1, s2, s3, i, j+1, k+1)));
     }
     
-    bool isInterleave(string s1, string s2, string s3) {
+    bool isInterleave(string s1, string s2, string s3) 
+{
         memset(t, -1, sizeof(t));
         m = s1.length();
         n = s2.length();
