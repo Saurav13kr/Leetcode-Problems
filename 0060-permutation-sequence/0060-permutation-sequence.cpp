@@ -1,7 +1,8 @@
 class Solution {
     public:
 
-        string getPermutation(int n, int k) {
+        string getPermutation(int n, int k)
+{
             string ans = "";
             vector<int> numbers;
        
@@ -14,7 +15,8 @@ class Solution {
             int blockSize = fact / n;	
             k = k - 1;
             
-            while (true){
+            while (true)
+            {
                 ans += to_string(numbers[k / blockSize]);	
                 numbers.erase(numbers.begin() + k / blockSize);
                
