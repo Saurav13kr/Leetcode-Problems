@@ -13,7 +13,8 @@ public:
         return r;
     }
     
-    int BS(int left,int right,vector<int>& nums,int target) {
+    int BS(int left,int right,vector<int>& nums,int target) 
+{
         int idx=-1;
         while(left<=right) {
             int mid=left+(right-left)/2;
@@ -28,7 +29,8 @@ public:
         }
         return -1;
     }
-    int search(vector<int>& nums, int target) {
+    int search(vector<int>& nums, int target) 
+{
         int n = nums.size();
         int pivot = find_pivot(nums, 0, n-1);
 
