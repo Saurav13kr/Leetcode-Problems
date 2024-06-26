@@ -9,8 +9,7 @@ public:
             int lencnt=0;
             int j;
             string res;
-            for(j=i;j<n;j++)
-            {
+            for(j=i;j<n;j++) {
                 if((lencnt+words[j].size()+j-i)<=maxWidth)
                   lencnt+=words[j].size();
                 else break;
