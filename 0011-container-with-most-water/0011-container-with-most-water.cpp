@@ -10,7 +10,8 @@ public:
                ans = max(ans, (j-i)*height[j]);
                j--;
                
-           } else{
+           } 
+           else{
                ans = max(ans, (j-i)*height[i]);
                i++;
            }
