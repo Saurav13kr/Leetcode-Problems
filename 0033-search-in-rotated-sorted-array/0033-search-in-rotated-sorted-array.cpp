@@ -13,8 +13,7 @@ public:
         return r;
     }
     
-    int BS(int left,int right,vector<int>& nums,int target) 
-{
+    int BS(int left,int right,vector<int>& nums,int target) {
         int idx=-1;
         while(left<=right) {
             int mid=left+(right-left)/2;
