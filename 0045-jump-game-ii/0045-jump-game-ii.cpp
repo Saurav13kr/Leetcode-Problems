@@ -10,7 +10,8 @@ public:
       int ind = 0;
       int ans = 0;
 
-      while(ind < nums.size() - 1) {
+      while(ind < nums.size() - 1) 
+      {
         ans++;
         ind = nums[ind];
       }
