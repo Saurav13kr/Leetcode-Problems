@@ -1,33 +1,37 @@
 class Solution {
 public:
-    void solve(vector<int> & candi, vector<vector<int>>& ans, vector<int> temp, int ind, int target) {
-        if(target == 0) {
-            ans.push_back(temp);
+    int n;
+    std::set<std::vector<int>> st; // To store unique combinations
+
+    void find(int ind, std::vector<int>& candidates, int t, std::unordered_map<int, int>& mp, std::vector<int>& temp) {
+        if (t == 0)
+        {
+            st.insert(temp);
             return;
         }
-
-        if(ind == candi.size() ){
+        if (ind >= n || t < 0) {
             return;
         }
-
-        if(candi[ind] <= target){ 
-            temp.push_back(candi[ind]);
-            solve(candi, ans, temp, ind+1, target - candi[ind]);
-            temp.pop_back();
+        int currentNum = candidates[ind];
+        int maxCount = mp[currentNum];
+        
+        for (int i = 0; i <= maxCount; ++i) {
+            if (t - currentNum * i >= 0) {
+                std::vector<int> tempCopy = temp;
+                tempCopy.insert(tempCopy.end(), i, currentNum);
+                find(ind + maxCount , candidates, t - currentNum * i, mp, tempCopy);
+            }
         }
-
-        while(ind + 1 < candi.size() && candi[ind + 1] == candi[ind]) ind++;  
-
-        solve(candi, ans, temp, ind + 1, target);
     }
-    
-    vector<vector<int>> combinationSum2(vector<int>& candi, int target) {
-        vector<vector<int>> ans;
-        
-        vector<int> temp;
-        sort(candi.begin(), candi.end());
-        solve(candi, ans, temp, 0, target);
-        
-        return ans;     
+
+    std::vector<std::vector<int>> combinationSum2(std::vector<int>& candidates, int target) {
+        n = candidates.size();
+        std::sort(candidates.begin(), candidates.end()); // Sort to handle duplicates
+        std::unordered_map<int, int> mp;
+        for (int i : candidates) mp[i]++;
+        std::vector<int> temp;
+        find(0, candidates, target, mp, temp);
+        std::vector<std::vector<int>> ans(st.begin(), st.end());
+        return ans;
     }
 };
