@@ -1,7 +1,6 @@
 class Solution {
 public:
-    int reverse(int x) 
-{
+    int reverse(int x) {
         int y=0;
         
         while(x) {
