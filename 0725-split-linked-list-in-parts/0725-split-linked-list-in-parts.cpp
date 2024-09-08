@@ -1,42 +1,44 @@
-
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
     vector<ListNode*> splitListToParts(ListNode* head, int k) {
-        int size=0;
-        ListNode* temp=head;
-        while(temp!=NULL)
-        {
-            size++;
-            temp=temp->next;
+        vector<ListNode*> result(k, nullptr);
+        ListNode* temp = head;
+        int totalNodes = 0;
+
+        while (temp != nullptr) {
+            totalNodes++;
+            temp = temp->next;
         }
-        int rem=size%k;
-        vector<ListNode*> ans;
-        temp=head;
-        
-        while(temp!=NULL)
-        {
-            int count=size/k;
-            ListNode* main=temp;
-            ListNode* prev;
-            while(count!=0)
-            {
-                prev=temp;
-                temp=temp->next;
-                count--;
+
+        int partSize = totalNodes / k;
+        int remainder = totalNodes % k;
+
+        ListNode* current = head;
+
+        for (int i = 0; i < k && current != nullptr; i++) {
+            result[i] = current;
+            int currentPartSize = partSize + (remainder > 0 ? 1 : 0);  
+            remainder--;
+
+            for (int j = 1; j < currentPartSize; j++) {
+                current = current->next;
             }
-            if(rem)
-            {
-                prev=temp;
-                temp=temp->next;
-                rem--;
-            }
-            ans.push_back(main);
-            prev->next=NULL;
+
+            ListNode* nextPart = current->next;
+            current->next = nullptr;
+            current = nextPart;
         }
-        while(ans.size()!=k)
-        {
-            ans.push_back(NULL);
-        }
-        return ans;
+
+        return result;
     }
 };
