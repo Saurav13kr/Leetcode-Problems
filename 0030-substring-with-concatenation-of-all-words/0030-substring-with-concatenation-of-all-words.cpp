@@ -29,7 +29,8 @@ public:
         }
         
         int i = 0;
-        while(i + wordsWindow <= sLen) {
+        while(i + wordsWindow <= sLen) 
+        {
             if(checkSubstring(wordCount, s.substr(i, wordsWindow), wordLen)) {
                 res.push_back(i);
             }
