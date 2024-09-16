@@ -13,7 +13,8 @@ public:
         positive == true ? i++ : i;
         negative == true ? i++ : i;
         
-        while(i < len && s[i] >= '0' && s[i] <= '9'){
+        while(i < len && s[i] >= '0' && s[i] <= '9')
+        {
             num = num*10 + (s[i]-'0');
             i++;
         }
