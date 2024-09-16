@@ -1,6 +1,7 @@
 <h2><a href="https://leetcode.com/problems/string-to-integer-atoi/">8. String to Integer (atoi)</a></h2><h3>Medium</h3><hr><div><p>Implement the <code>myAtoi(string s)</code> function, which converts a string to a 32-bit signed integer (similar to C/C++'s <code>atoi</code> function).</p>
 
-<p>The algorithm for <code>myAtoi(string s)</code> is as follows:</p>
+<p>
+	The algorithm for <code>myAtoi(string s)</code> is as follows:</p>
 
 <ol>
 	<li>Read in and ignore any leading whitespace.</li>
@@ -39,6 +40,7 @@ Since 42 is in the range [-2<sup>31</sup>, 2<sup>31</sup> - 1], the final result
 <pre><strong>Input:</strong> s = "   -42"
 <strong>Output:</strong> -42
 <strong>Explanation:</strong>
+	
 Step 1: "<u>   </u>-42" (leading whitespace is read and ignored)
             ^
 Step 2: "   <u>-</u>42" ('-' is read, so the result should be negative)
