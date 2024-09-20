@@ -13,7 +13,8 @@ public:
         int ans = 0, st=0;
         int n = s.length();
         
-        for(int i = 0;i<n;i++) {
+        for(int i = 0;i<n;i++) 
+        {
             int len1 = check(s, i,i);
             int len2 = check(s, i, i+1);
             
