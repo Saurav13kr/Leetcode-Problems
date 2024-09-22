@@ -1,9 +1,7 @@
 
 class Solution {
 public:
-    //Function to calculate length of LL
-    int length(ListNode* head)
-     {
+    int length(ListNode* head){
          ListNode* temp = head;
          int l = 0;
 
