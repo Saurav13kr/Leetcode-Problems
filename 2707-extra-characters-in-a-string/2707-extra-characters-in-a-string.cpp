@@ -1,20 +1,33 @@
 class Solution {
 public:
-    int minExtraChar(string s, vector<string>& dictionary) {
-        int n = s.length();
-        vector<int> DP(n + 1);
-        DP[0] = 0;
+    unordered_set<string> st;
+    int dp[51];
+    int solve(string& s, int index) {
+        if (index >= s.size()) {
+            return 0;
+        }
+
+        if (dp[index] != -1) {
+            return dp[index];
+        }
+        int len = INT_MAX;
         
-        for(int i = 0; i < n; i++) {
-            DP[i + 1] = 1 + DP[i];
-            
-            for(string c: dictionary) {
-                int len = c.length();                
-                if(i >= len - 1 && c == s.substr(i - len+1, len)) {
-                    DP[i+1] = min(DP[i + 1], DP[i - len+1]);
-                }
+        for (int i = 1; i <= s.size(); i++) 
+        {
+            string str = s.substr(index, i);
+            if (st.find(str) != st.end()) {
+                len = min(len, solve(s, index + i));
             }
         }
-        return DP[n];
+
+        len = min(len, 1 + solve(s, index + 1));
+        return dp[index] = len;
+    }
+    int minExtraChar(string s, vector<string>& d) {
+        for (int i = 0; i < d.size(); i++) {
+            st.insert(d[i]);
+        }
+        memset(dp, -1, sizeof(dp));
+        return solve(s, 0);
     }
 };
