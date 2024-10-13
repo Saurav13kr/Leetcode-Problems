@@ -1,46 +1,34 @@
 class Solution {
 public:
-    struct node {
-        int data, row, column;
-        node(int value, int i, int j) : data(value), row(i), column(j) {}
-    };
-    
-    struct comparator {
-        bool operator() (node a, node b) {
-            return a.data > b.data;
-        }
-    };
-    
     vector<int> smallestRange(vector<vector<int>>& nums) {
-        int k = nums.size();
-        priority_queue<node, vector<node>, comparator> minHeap;
-        int currMin = INT_MAX, currMax = INT_MIN, currRange = INT_MAX;
-        
-        for(int i = 0; i < k; ++i) {
-            currMax = max(currMax, nums[i][0]);
-            node temp(nums[i][0], i, 0);
-            minHeap.push(temp);
+        cin.tie(0);
+        cout.tie(0);
+        ios::sync_with_stdio(false);
+        priority_queue<vector<int>,vector<vector<int>>,greater<vector<int>>>minheap;
+        int curmax=INT_MIN;
+        for(int i=0;i<nums.size();i++){
+            minheap.push({nums[i][0],i,0});
+            curmax=max(curmax,nums[i][0]);
         }
-        
-        int start = currMin, end = currMax;
-        while(true) {
-            node min = minHeap.top();
-            minHeap.pop();
-            currMin = min.data;
-            if(currMax - currMin < currRange) {
-                start = currMin;
-                end = currMax;
-                currRange = currMax - currMin;
+        vector<int> smallinterval={0,INT_MAX};
+        while(!minheap.empty())
+        {
+            vector<int>c=minheap.top();
+            minheap.pop();
+            int curmin=c[0],lindex=c[1],eleindex=c[2];
+            if((curmax-curmin<smallinterval[1]-smallinterval[0])||(curmax-curmin==smallinterval[1]-smallinterval[0] && curmin<smallinterval[0])){
+                smallinterval[0]=curmin;
+                smallinterval[1]=curmax;
             }
-            if(min.column + 1 == nums[min.row].size())
+            if(eleindex+1<nums[lindex].size())
+            {
+                int nextval=nums[lindex][eleindex+1];
+                minheap.push({nextval,lindex,eleindex+1});
+                curmax=max(curmax,nextval);
+            } else{
                 break;
-     
-            node next(nums[min.row][min.column + 1], min.row, min.column + 1);
-            minHeap.push(next);
-  
-            if(next.data > currMax)
-                currMax = next.data;
+            }
         }
-        return {start, end};
+        return smallinterval;
     }
 };
