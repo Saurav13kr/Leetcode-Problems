@@ -6,8 +6,7 @@ public:
         long int dd = abs(dividend), dv = abs(divisor);
         int res=0;
         
-        while(dv<=dd) 
-        {
+        while(dv<=dd) {
             long int mul=dv, tmp=1;
             while(mul<=dd-mul) {
                 mul+=mul;
