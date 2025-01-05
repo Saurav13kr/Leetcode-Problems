@@ -1,6 +1,5 @@
 class Solution {
-public:
-    
+public:    
     bool checkSubstring(unordered_map<string, int> wordCount, string s, int wordLen) 
 {
         for(int j=0; j<s.size(); j+=wordLen) {
@@ -9,15 +8,15 @@ public:
                 if(--wordCount[w] == -1) {
                     return false;
                 }
-            } 
-            else {
+            } else {
                 return false;
             }
         }
         return true;
     }
 
-    vector<int> findSubstring(string s, vector<string>& words) {
+    vector<int> findSubstring(string s, vector<string>& words) 
+{
         vector<int> res;
         int wordLen = words[0].size();
         int sLen = s.size();
