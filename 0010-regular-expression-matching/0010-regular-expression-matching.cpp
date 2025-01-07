@@ -11,8 +11,7 @@ public:
                 d[0][j] = d[0][j-2];
         }
 
-        for (int i = 1; i <= m; i++) 
-        {
+        for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) 
             {
                 if (s[i-1] == p[j-1] || p[j-1] == '.') 
