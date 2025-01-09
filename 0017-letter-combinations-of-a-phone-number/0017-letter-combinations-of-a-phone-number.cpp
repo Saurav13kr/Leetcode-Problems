@@ -16,7 +16,8 @@ public:
             backtrack(n+1, p, d);
         }
     }
-    vector<string> letterCombinations(const string& d) {
+    vector<string> letterCombinations(const string& d)
+{
         if (d.empty()) return a;
         string p = d;
         backtrack(0, p, d);
