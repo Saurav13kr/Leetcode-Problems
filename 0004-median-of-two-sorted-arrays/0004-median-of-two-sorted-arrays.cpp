@@ -15,7 +15,8 @@ public:
         int j = 0;
 
         while(i < s1) {
-            if(nums1[i] > nums2[0]) {
+            if(nums1[i] > nums2[0]) 
+            {
                 swap(nums1[i], nums2[0]); 
                 rearrangeArray(nums2); 
             }
