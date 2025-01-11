@@ -6,7 +6,8 @@ public:
         std::vector<std::vector<bool>> d(m+1, std::vector<bool>(n+1, false));
         d[0][0] = true; 
 
-        for (int j = 1; j <= n; j++) {
+        for (int j = 1; j <= n; j++) 
+        {
             if (p[j-1] == '*')
                 d[0][j] = d[0][j-2];
         }
