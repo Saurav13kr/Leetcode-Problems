@@ -17,7 +17,8 @@ public:
                     }
                     else if(nums[low] + nums[high] > newTarget){
                         high--;
-                    } else{
+                    } 
+                    else{
                         output.push_back({nums[i], nums[j], nums[low], nums[high]});
                         int tempIndex1 = low, tempIndex2 = high;
                         while(low < high && nums[low] == nums[tempIndex1]) low++;
