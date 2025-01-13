@@ -12,7 +12,8 @@ public:
         }
         
         for(int i=n-1; i>=0; i--){
-            if(nums[i] == target){
+            if(nums[i] == target)
+            {
                 b = i;
                 break;
             }
