@@ -9,7 +9,8 @@ public:
             if(y>INT_MAX/10 || y<INT_MIN/10)
             {
                 return 0;
-            } else {
+            } 
+            else {
                 y=y*10 +x%10;
                 x=x/10;
             }
