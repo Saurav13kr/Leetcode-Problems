@@ -10,7 +10,8 @@ public:
     {
         if(j == numRows - 1 || j == 0) dir *= (-1);  
         v[j] += s[i];
-        if(dir == 1) j++;
+        if(dir == 1) 
+            j++;
         else j--;
     }
     string res;
