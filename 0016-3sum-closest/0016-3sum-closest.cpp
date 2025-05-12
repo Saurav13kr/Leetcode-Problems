@@ -7,9 +7,11 @@ public:
         for (int i = 0; i < n-2; ++i) 
         {
             int l = i + 1, r = n - 1;
-            while (l < r) {
+            while (l < r)
+                
+            {
                 int sum3 = nums[i] + nums[l] + nums[r];
-                if (abs(ans - target) > abs(sum3 - target)) // Update better ans
+                if (abs(ans - target) > abs(sum3 - target)) 
                     ans = sum3;
                 if (sum3 == target) break;
                 if (sum3 > target)
